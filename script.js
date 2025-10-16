@@ -1,12 +1,14 @@
 let video = document.getElementById("video");
-let icon = document.querySelector(".play-icon")
 video.addEventListener("click", () => {
   if (video.paused) {
     video.play();
-    icon.style.opacity = "0";
+    video.innerHTML = "";
+   
     video.muted=false;
   } else {
     video.pause();
-    icon.style.opacity = "1";
+     video.innerHTML = ` <div class="overlay">
+                <i class="fa-solid fa-play play-icon"></i>
+            </div>`
   }
 });
