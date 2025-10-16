@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+   width: 360px;        /* 📱 Mobile width frame */
+  /* height: 400px;  */
+}
+.video {
+  height: 100%;
+  width: 100%;
+}
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ fills entire screen */
+  display: block;
+}
+
+.header {
+    display: flex;
+align-items: center;
+gap: 30px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+}
+.container .connect{
+  position: absolute;
+  right: 10px;
+  bottom: 20px; /* 🔹 fix distance from bottom instead of top */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .connect .profile{
+  height: 30px;
+  width: 30px;
+}
+.container .connect .profile img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.container .connect i{
+  color: #fff;
+  font-size: 1.5rem;
+}
+.container .connect p{
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+.container .footer{
+border-top: 1px solid white;
+ padding-bottom: 20px;
+ padding-top: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+}
+.container .footer .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.container .footer .icons .fa-plus{
+    background-color: #fff;
+    color: black;
+    padding: 5px 25px;
+    border-radius: 10px;
+    border-left: 7px solid rgb(59, 157, 218);
+    border-right: 7px solid rgb(243, 63, 93);
+}
+.container .footer .icons i{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* 📱 Mobile: full screen view */
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+/* ✅ 425px–768px: slightly larger connect icons */
+@media (min-width: 426px) and (max-width: 768px) {
+  .container .connect .profile {
+    height: 45px;
+    width: 45px;
+  }
+
+  .container .connect i {
+    font-size: 2rem;
+  }
+
+  .container .connect p {
+    font-size: 14px;
+  }
+}
+
+/* ✅ Extra small (up to 425px): smaller but still readable */
+@media (max-width: 425px) {
+
+  .container .connect .profile {
+    height: 35px;
+    width: 35px;
+  }
+
+  .container .connect i {
+    font-size: 1.7rem;
+  }
+
+  .container .connect p {
+    font-size: 12px;
+  }
+}
+@media (max-width:411px){
+.container .connect .profile {
+    height: 45px;
+    width: 45px;
+  }
+.container .connect{
+  gap: 20px;
+  bottom: 70px;
+}
+  .container .connect i {
+    font-size: 2rem;
+  }
+
+  .container .connect p {
+    font-size: 12px;
+  }
+}
+
