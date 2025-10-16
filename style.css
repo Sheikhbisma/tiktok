@@ -25,6 +25,17 @@ body, html {
 .video {
   height: 100%;
   width: 100%;
+  position: relative;
+}
+.video .overlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.video .overlay i{
+  font-size: 3rem;
+  color: #fff;
 }
 .video video {
   width: 100%;
@@ -48,7 +59,7 @@ gap: 30px;
 .container .connect{
   position: absolute;
   right: 10px;
-  bottom: 20px; /* 🔹 fix distance from bottom instead of top */
+  bottom: 70px; /* 🔹 fix distance from bottom instead of top */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -102,7 +113,7 @@ border-top: 1px solid white;
     display: flex;
     justify-content: center;
 }
-/* 📱 Mobile: full screen view */
+/* ✅ Tablet and small laptops */
 @media (max-width: 768px) {
   .container {
     width: 100vw;
@@ -110,7 +121,8 @@ border-top: 1px solid white;
     border-radius: 0;
   }
 }
-/* ✅ 425px–768px: slightly larger connect icons */
+
+/* ✅ 426px–768px: mid-size devices (Pixel 8, tablets, etc.) */
 @media (min-width: 426px) and (max-width: 768px) {
   .container .connect .profile {
     height: 45px;
@@ -126,12 +138,11 @@ border-top: 1px solid white;
   }
 }
 
-/* ✅ Extra small (up to 425px): smaller but still readable */
-@media (max-width: 425px) {
-
+/* ✅ 376px–425px: small phones (A12, iPhone X, etc.) */
+@media (min-width: 376px) and (max-width: 425px) {
   .container .connect .profile {
-    height: 35px;
-    width: 35px;
+    height: 38px;
+    width: 38px;
   }
 
   .container .connect i {
@@ -142,21 +153,21 @@ border-top: 1px solid white;
     font-size: 12px;
   }
 }
-@media (max-width:411px){
-.container .connect .profile {
+
+/* ✅ ≤375px: extra-small phones (old iPhones, small Androids) */
+@media (max-width: 375px) {
+  .container .connect .profile {
     height: 45px;
     width: 45px;
   }
 .container .connect{
   gap: 20px;
-  bottom: 70px;
 }
   .container .connect i {
     font-size: 2rem;
   }
 
   .container .connect p {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
-
