@@ -8,7 +8,9 @@ body, html {
   height: 100%;
   width: 100%;
 }
-
+body{
+  overflow: hidden;
+}
 .main-container {
   height: 100vh;
   width: 100vw;
@@ -18,6 +20,7 @@ body, html {
 }
 
 .container {
+
   position: relative;
    width: 360px;        /* 📱 Mobile width frame */
   /* height: 400px;  */
@@ -44,19 +47,25 @@ body, html {
   object-fit: cover; /* ✅ fills entire screen */
   display: block;
 }
+.header { 
+  position: fixed; 
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
 
-.header {
-    display: flex;
-align-items: center;
-gap: 30px;
+.head { 
   position: absolute;
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
   color: #fff;
-  text-align: center;
-  z-index: 10;
+  z-index: 101; /* header ke upar */
 }
+
 .container .connect{
   position: absolute;
   right: 10px;
@@ -85,12 +94,112 @@ gap: 30px;
   font-size: 12px;
   text-align: center;
 }
+#commentBox{
+        cursor: pointer;
+
+}
+.comment-box{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    /* height: 70%; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #202020;
+    padding:20px 20px 4rem 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(50px);
+    transition: all 0.3s ease;
+}
+.comment-box.active{
+    transform: translateY(0);
+opacity: 1;
+pointer-events: auto;
+}
+#come .img .second p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+}
+
+#come .img {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+#come .img .first img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#come .img .first {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px; /* thoda sa space name aur comment ke beech */
+}
+#come .img .second {
+    margin-left: 40px; /* image ke level se align */
+    margin-top: -5px; /* upar ka gap remove karega */
+}
+
+#come .img .second p {
+    font-size: 14px;
+    margin: 0; /* default bottom aur top margin hatao */
+    line-height: 1.3; /* thoda compact line spacing */
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.closeBtn {
+  font-size: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+#add.active{
+    background: #fcfafa;
+    color: black;
+}
+.input-box{
+    position: relative;
+}
+.comment-box .input-box input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #000;
+    color: #fff;
+}
+.comment-box .input-box button{
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    background: #6e6d6d;
+    color: #fff;
+}
+#add.active{
+    background: #fcfafa;
+    color: black;
+}
 .container .footer{
 border-top: 1px solid white;
  padding-bottom: 20px;
  padding-top: 5px;
     width: 100%;
-    position: absolute;
+     position: fixed;  /* absolute → fixed */
     bottom: 0;
     left: 0;
     color: #fff;
