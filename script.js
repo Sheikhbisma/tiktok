@@ -1,7 +1,8 @@
 let video = document.getElementById("video");
 let icon = document.querySelector(".play-icon");
-video.muted = false;
-video.addEventListener("click", () => {
+window.onload = function() {
+  video.muted = false;
+};video.addEventListener("click", () => {
   if (video.paused) {
     video.play();
     icon.style.opacity = "0";
