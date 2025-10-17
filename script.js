@@ -71,7 +71,7 @@ addBtn.addEventListener("click" , ()=>{
     let para = document.createElement("p");
     para.innerHTML = `  <div class="img">
                         <div class="first">
-                            <img src="/assets/profile-circle.svg" alt="">
+                            <img src="/videos/profile-circle.svg" alt="">
                             <b>You</b>
                         </div>
                         <div class="second">
@@ -87,4 +87,6 @@ addBtn.addEventListener("click" , ()=>{
 });
 closeBtn.addEventListener("click",()=>{
   comment.classList.remove("active");
+   foot.style.display = "block";
+
 });
